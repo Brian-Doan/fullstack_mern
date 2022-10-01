@@ -1,0 +1,52 @@
+GET http://localhost:5000/
+
+###
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "username": "brian",
+  "password": "brian"
+}
+
+###
+
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "username": "jim",
+  "password": "jim"
+}
+
+###
+POST http://localhost:5000/api/posts
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzM2YjRiMWI0Y2RmNDNhN2ExNGNhZjgiLCJpYXQiOjE2NjQ2MzAyMTd9.sZMGMPfpTkiMnzkSxeHTJM-dHhrpIEq7Wfe60kRRu5c
+
+{
+  "title": "NodeJS",
+  "description": "NodeJS course",
+  "url": "https://nodejs.org/en/",
+  "status": "To learn"
+}
+
+### 
+GET http://localhost:5000/api/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzM2YmJkZWFjNzc2NDRmM2NjYmJmOTQiLCJpYXQiOjE2NjQ1MzE0MjJ9.KJqUGdYBUfqjgG6vAd9w7o6daM0xMB3U_mcE139RfUw
+
+###
+PUT http://localhost:5000/api/posts/63384cd8028582170b7b79d0
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzM2YjRiMWI0Y2RmNDNhN2ExNGNhZjgiLCJpYXQiOjE2NjQ2MzAyMTd9.sZMGMPfpTkiMnzkSxeHTJM-dHhrpIEq7Wfe60kRRu5c
+
+{
+  "title": "Javascript",
+  "description": "Javascript course",
+  "url": "w3schools.com",
+  "status": "learning"
+}
+
+###
+DELETE http://localhost:5000/api/posts/6336bc1dac77644f3ccbbf96
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2MzM2YmJkZWFjNzc2NDRmM2NjYmJmOTQiLCJpYXQiOjE2NjQ1MzE0MjJ9.KJqUGdYBUfqjgG6vAd9w7o6daM0xMB3U_mcE139RfUw
